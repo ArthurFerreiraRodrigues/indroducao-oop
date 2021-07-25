@@ -1,1 +1,4 @@
 helper -> r.Int r.Line r.Char r.Float
+
+show contents of data class
+for (Model model: models)
