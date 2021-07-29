@@ -1,4 +1,16 @@
-helper -> r.Int r.Line r.Char r.Float
+switch statement implementation -> cases@Menu.java
 
-show contents of data class
-for (Model model: models)
+case 2
+	@see helper.Print.productsInStock
+
+	"
+	    for (Client client : Dados.getClients())
+	"
+case 4
+	copy case 2 -> control+f -> replace all client with product
+
+case 5
+	@see helper.Print.productsInStock to print clients -> choose client -> print products -> choose products
+
+	inStockQuantities validation
+	quit validation -> 0 to quit | -1 to change client
