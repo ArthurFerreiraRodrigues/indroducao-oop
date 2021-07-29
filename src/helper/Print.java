@@ -1,6 +1,10 @@
 package helper;
 
+import model.Dados;
+import model.Product;
+
 public class Print {
+
     /**
      * Imprime espaços ate que a palavra esteja ao centro
      * 
@@ -37,4 +41,21 @@ public class Print {
         Print.split();
     }
 
+    /**
+     * Case 6 : O programa deverá mostrar a lista de todos os produtos cadastrados
+     * com a quantidade em estoque de cada um deles.
+     */
+    public static void productsInStock() {
+        int contador = 1;
+
+        Print.titulo("Mostrar Produtos em Estoque");
+
+        for (Product product : Dados.getProducts()) {
+            System.out.printf(".%d - %s | %f | %d", contador, product.getName(), product.getValue(),
+                    product.getInStockQuant());
+
+            contador++;
+        }
+
+    }
 }

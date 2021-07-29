@@ -39,7 +39,7 @@ public class Register {
         System.out.print("\tEndereço : ");
         String adress = Read.Line();
         System.out.print("\tNúmero de Celular : ");
-        int celNumber = Read.Int();
+        String celNumber = Read.Line();
 
         return new Costumer(name, adress, celNumber);
     }
@@ -82,12 +82,16 @@ public class Register {
 
         System.out.print("\tNome : ");
         String name = Read.Line();
+
         System.out.print("\tDescrição : ");
         String description = Read.Line();
+
         System.out.print("\tValor R$");
         double value = Read.Double();
+
         System.out.print("\tLucro (%) : ");
         double profitPercentage = Read.Double();
+
         System.out.print("\tQuantidade em Estoque : ");
         int inStockQuant = Read.Int();
 

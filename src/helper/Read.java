@@ -3,6 +3,7 @@ package helper;
 import java.util.Scanner;
 
 @SuppressWarnings("resource")
+
 public class Read {
     public static int Int() {
         Scanner sc = new Scanner(System.in);
@@ -26,5 +27,17 @@ public class Read {
         Scanner sc = new Scanner(System.in);
 
         return sc.next().charAt(0);
+    }
+
+    /**
+     * Lê a entrada de escolha de opção do menu
+     * 
+     * @return Opção escolhida
+     * 
+     * @see helper.Menu
+     */
+    public static int menu() {
+        System.out.printf("Escolha : ");
+        return Read.Int();
     }
 }
