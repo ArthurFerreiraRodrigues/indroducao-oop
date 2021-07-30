@@ -1,4 +1,7 @@
-switch statement implementation -> cases@Menu.java
+switch statement implementation -> cases@Menu.java ✔️
+
+case 1 ✔️
+	Register.costumer();
 
 case 2
 	@see helper.Print.productsInStock
@@ -6,6 +9,10 @@ case 2
 	"
 	    for (Client client : Dados.getClients())
 	"
+
+case 3 ✔️
+	Register.product();
+
 case 4
 	copy case 2 -> control+f -> replace all client with product
 
@@ -13,4 +20,11 @@ case 5
 	@see helper.Print.productsInStock to print clients -> choose client -> print products -> choose products
 
 	inStockQuantities validation
-	quit validation -> 0 to quit | -1 to change client
+	quit validation -> 0 to quit 
+
+case 6 ✔️
+	helper.Print.productsInStock();
+
+case 7 ✔️
+	mensagem de saida
+	atualizar variável de controle

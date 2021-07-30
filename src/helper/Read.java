@@ -34,7 +34,7 @@ public class Read {
      * 
      * @return Opção escolhida
      * 
-     * @see helper.Menu
+     * @see appmain.Menu
      */
     public static int menu() {
         System.out.printf("Escolha : ");

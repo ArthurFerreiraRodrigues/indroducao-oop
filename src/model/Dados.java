@@ -10,15 +10,19 @@ public abstract class Dados {
     private static final ArrayList<Costumer> costumers = new ArrayList<>();
     private static final ArrayList<Product> products = new ArrayList<>();
 
-    // Constructor
-    private Dados() {
-    }
-
     public static List<Costumer> getCostumer() {
         return costumers;
     }
 
     public static List<Product> getProducts() {
         return products;
+    }
+
+    public static int getSizeOfCostumers() {
+        return costumers.size();
+    }
+
+    public static int getSizeOfProducts() {
+        return products.size();
     }
 }

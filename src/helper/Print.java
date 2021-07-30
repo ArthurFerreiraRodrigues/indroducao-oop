@@ -1,5 +1,6 @@
 package helper;
 
+import model.Costumer;
 import model.Dados;
 import model.Product;
 
@@ -34,11 +35,37 @@ public class Print {
      * 
      * @param string
      */
-    public static void titulo(String string) {
+    public static void titulo(String titulo) {
         Print.split();
-        Print.printEspacoMeio(string.length(), 60);
-        System.out.print(string);
+        Print.printEspacoMeio(titulo.length(), 60);
+        System.out.print(titulo);
         Print.split();
+    }
+
+    /**
+     * Imprime uma string ao centro da linha
+     * 
+     * @param string
+     */
+    public static void tituloAndDescription(String titulo, String description) {
+        Print.split();
+        Print.printEspacoMeio(titulo.length(), 60);
+        System.out.println(titulo);
+
+        Print.printEspacoMeio(description.length(), 60);
+        System.out.print(description);
+        Print.split();
+    }
+
+    public static void costumers() {
+        int contador = 1;
+        Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
+        for (Costumer costumer : Dados.getCostumer()) {
+            System.out.printf(".%d - %s | %s | %s\n", contador, costumer.getName(), costumer.getAdress(),
+                    costumer.getCelNumber());
+
+            contador++;
+        }
     }
 
     /**
@@ -48,10 +75,10 @@ public class Print {
     public static void productsInStock() {
         int contador = 1;
 
-        Print.titulo("Mostrar Produtos em Estoque");
+        Print.tituloAndDescription("Mostrar Produtos em Estoque", "Nome | Valor (R$) | Quatidade em Estoque");
 
         for (Product product : Dados.getProducts()) {
-            System.out.printf(".%d - %s | %f | %d", contador, product.getName(), product.getValue(),
+            System.out.printf(".%d - %s | R$ %.2f | %d un.\n", contador, product.getName(), product.getValue(),
                     product.getInStockQuant());
 
             contador++;
