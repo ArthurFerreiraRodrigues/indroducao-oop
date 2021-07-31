@@ -13,6 +13,8 @@ public class Register {
 
     /**
      * Recebe numero de clientes que serao cadastrados e gera novos perfis.
+     * 
+     * @see model.Costumer
      */
     public static void costumer() {
         Print.titulo("Cadastro de Novo Cliente");
@@ -20,17 +22,19 @@ public class Register {
         System.out.print("Quantidade de clientes a serem cadastrados : ");
         int quantCostumers = Read.Int();
         for (int i = 0; i < quantCostumers; i++) {
-            Costumer perfil = inputPerfilCostumer();
-            addPerfilToDataCostumer(perfil);
+            Costumer profile = inputProfileCostumer();
+            addProfileToDataCostumer(profile);
         }
 
     }
 
     /**
-     * @return Novo perfil de cliente (name, adress, celNumber)
+     * Recebe as informações do cliente.
+     * 
+     * @return Novo profile de cliente (name, adress, celNumber)
      * @see model.Costumer
      */
-    private static Costumer inputPerfilCostumer() {
+    private static Costumer inputProfileCostumer() {
         System.out.printf("\nCliente %d\n", Dados.getSizeOfCostumers() + 1);
 
         System.out.print("\tNome : ");
@@ -44,19 +48,21 @@ public class Register {
     }
 
     /**
-     * Adiciona parametro "perfil" a dados.
+     * Adiciona parametro "profile" a dados.
      * 
-     * @param perfil
+     * @param profile
      * @see model.Dados
      */
-    private static void addPerfilToDataCostumer(Costumer perfil) {
-        Dados.getCostumer().add(perfil);
+    private static void addProfileToDataCostumer(Costumer profile) {
+        Dados.getCostumer().add(profile);
     }
 
     // Products
 
     /**
      * Recebe numero de produtos que serao cadastrados e gera novos perfis.
+     * 
+     * @see model.Product
      */
     public static void product() {
         Print.titulo("Cadastro de Novo Produto");
@@ -64,18 +70,20 @@ public class Register {
         System.out.printf("Quantidade de produtos a serem cadastrados : ");
         int quantProducts = Read.Int();
         for (int i = 0; i < quantProducts; i++) {
-            Product perfil = inputPerfilProduct();
-            addPerfilToDataProduct(perfil);
+            Product profile = inputProfileProduct();
+            addProfileToDataProduct(profile);
         }
 
     }
 
     /**
-     * @return Novo perfil de produto (name, description, value, profitPercentage,
+     * Recebe as informações do produto.
+     * 
+     * @return Novo profile de produto (name, description, value, profitPercentage,
      *         inStockQuant)
      * @see model.Product
      */
-    private static Product inputPerfilProduct() {
+    private static Product inputProfileProduct() {
 
         System.out.printf("\nProduto %d\n", Dados.getSizeOfProducts() + 1);
 
@@ -98,15 +106,21 @@ public class Register {
     }
 
     /**
-     * Adiciona parametro "perfil" a dados.
+     * Adiciona parametro "profile" a dados.
      * 
-     * @param perfil
+     * @param profile
      * @see model.Dados
      */
-    private static void addPerfilToDataProduct(Product perfil) {
-        Dados.getProducts().add(perfil);
+    private static void addProfileToDataProduct(Product profile) {
+        Dados.getProducts().add(profile);
     }
 
+    /**
+     * Imprime a lista de clientes, recebe escolha do cliente, imprime lista de
+     * produtos, recebe escolha de produto, recebe quantidade de unidades vendidas.
+     * 
+     * @see model.Dados
+     */
     public static void sales() {
         Print.titulo("Cadastro de Venda");
 
@@ -124,10 +138,10 @@ public class Register {
                 System.out.printf("Selecione um Cliente Pela Sua Posição : ");
                 selectCostumer = Read.Int();
 
-                if (selectCostumer < Dados.getSizeOfCostumers() || selectCostumer > Dados.getSizeOfCostumers()) {
+                if (selectCostumer < 1 || selectCostumer > Dados.getSizeOfCostumers()) {
                     System.out.print("\nERRO: Número fora do intervalo! Digite novamente.\n\n");
                 }
-            } while (selectCostumer < Dados.getSizeOfCostumers() || selectCostumer > Dados.getSizeOfCostumers());
+            } while (selectCostumer < 1 || selectCostumer > Dados.getSizeOfCostumers());
 
             do {
                 if (Dados.getSizeOfProducts() < 0) {
@@ -141,24 +155,21 @@ public class Register {
                         System.out.printf("Selecione o Produto Vendido Pela Sua Posição : ");
                         selectProduct = Read.Int();
 
-                        if (selectProduct != 0 && (selectProduct < Dados.getSizeOfProducts()
-                                || selectProduct > Dados.getSizeOfProducts())) {
+                        if (selectProduct != 0 && (selectProduct < 1 || selectProduct > Dados.getSizeOfProducts())) {
                             System.out.print("\nERRO: Número fora do intervalo! Digite novamente.\n\n");
                         }
 
-                    } while (selectProduct != 0 && (selectProduct < Dados.getSizeOfProducts()
-                            || selectProduct > Dados.getSizeOfProducts()));
+                    } while (selectProduct != 0 && (selectProduct < 1 || selectProduct > Dados.getSizeOfProducts()));
                     if (selectProduct != 0) {
                         System.out.printf("\nCliente Selecionado : %s\n",
                                 Dados.getCostumer().get(selectCostumer - 1).getName());
                         System.out.printf("\tProduto Selecionado : %s\n",
                                 Dados.getProducts().get(selectProduct - 1).getName());
-
+                        System.out.printf("\t\tDigite 0 para sair.\n");
+                        System.out.printf(
+                                "\t\tNão pode ser um valor menor que 0 e nem maior que a quantidade em estoque. \n");
+                        System.out.printf("\t\tQuantidade de unidades vendidas : ");
                         do {
-                            System.out.printf("\t\tDigite 0 para sair.\n");
-                            System.out.printf(
-                                    "\t\tNão pode ser um valor menor que 0 e nem maior que a quantidade em estoque. \n");
-                            System.out.printf("\t\tQuantidade de unidades vendidas : ");
                             quantUnitSold = Read.Int();
 
                             if (quantUnitSold < 0

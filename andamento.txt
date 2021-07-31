@@ -3,7 +3,7 @@ switch statement implementation -> cases@Menu.java ✔️
 case 1 ✔️
 	Register.costumer();
 
-case 2
+case 2✔️
 	@see helper.Print.productsInStock
 
 	"
@@ -13,7 +13,7 @@ case 2
 case 3 ✔️
 	Register.product();
 
-case 4
+case 4✔️
 	copy case 2 -> control+f -> replace all client with product
 
 case 5✔️✔️✔️✔️✔️ acabeisaporraa

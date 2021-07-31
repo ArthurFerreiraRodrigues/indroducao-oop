@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 @SuppressWarnings("resource")
 
+/**
+ * Classe utilizada para facilitar lidar com buffer de teclado.
+ */
 public class Read {
     public static int Int() {
         Scanner sc = new Scanner(System.in);

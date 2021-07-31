@@ -11,7 +11,7 @@ public class Product {
     private int inStockQuant;
 
     /**
-     * Gera o perfil do produto
+     * Gera o profile do produto
      * 
      * @param name             : nome do produto
      * @param description      : descricao do produto
@@ -28,32 +28,60 @@ public class Product {
     }
 
     // Getters
+
+    /**
+     * @return Nome do Produto
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return Descrição do Produto
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * @return Valor do Produto
+     */
     public double getValue() {
         return value;
     }
 
+    /**
+     * @return Porcentagem de Lucro do Produto
+     */
     public double getProfitPercentage() {
         return profitPercentage;
     }
 
+    /**
+     * @return Quantidade de Unidades do Produto em Estoque
+     */
     public int getInStockQuant() {
         return inStockQuant;
     }
 
     // Setters
+
+    /**
+     * Atualiza quantidade de unidades em estoque.
+     * 
+     * @param quantSold
+     * @see appmain.Register Register.sales()
+     */
     public void uptateStockQuant(int quantSold) {
         inStockQuant = inStockQuant - quantSold;
 
     }
 
+    /**
+     * Atualiza Cadastro do Produto.
+     * 
+     * @see appmain.Search
+     */
     public void updateProductInfo() {
         Print.titulo("Alterar Dados do Produto");
         System.out.printf("Novo Nome :");

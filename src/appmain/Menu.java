@@ -3,11 +3,12 @@ package appmain;
 import helper.Print;
 import helper.Read;
 import model.Costumer;
+import model.Dados;
 import model.Product;
 
 public class Menu {
     /**
-     * Imprime as opções do menu
+     * Imprime as opções do menu.
      *
      */
     public static void options() {
@@ -24,10 +25,21 @@ public class Menu {
         Print.split();
     }
 
+    /**
+     * Cadastro dos Clientes.
+     * 
+     * @see appmain.Register
+     */
     public static void case1() {
         Register.costumer();
     }
 
+    /**
+     * Busca de Clientes por Nome. Pesquisa e edita informações de clientes, caso o
+     * usuário queira.
+     * 
+     * @see appmain.Search
+     */
     public static void case2() {
         String searchName;
         Costumer match;
@@ -66,13 +78,25 @@ public class Menu {
 
     }
 
-    private static int thereIsProduct = 0;
+    // public static int thereIsProduct = 0; // Controla se produtos foram
+    // cadastrados ou não
 
+    /**
+     * Cadastro de Produtos.
+     * 
+     * @see appmain.Register
+     */
     public static void case3() {
         Register.product();
-        thereIsProduct = 1;
+        // thereIsProduct = 1;
     }
 
+    /**
+     * Busca de Produtos por Nome. Pesquisa e edita informações de produtos, caso o
+     * usuário queira.
+     * 
+     * @see appmain.Search
+     */
     public static void case4() {
         String searchName;
         Product match;
@@ -111,15 +135,23 @@ public class Menu {
 
     }
 
+    /**
+     * Cadastro de Vendas
+     * 
+     * @see appmain.Register
+     */
     public static void case5() {
         Register.sales();
     }
 
     /**
+     * Mostra a lista de produtos cadastrados com seu respectivo nome e sua
+     * quantidade em estoque.
      * 
+     * @see helper.Print
      */
     public static void case6() {
-        if (thereIsProduct == 1) { // @see Menu.case2()
+        if (Dados.getSizeOfProducts() != 0) { // @see Menu.case2()
             Print.productsInStock();
         } else {
             Print.split();
@@ -131,7 +163,6 @@ public class Menu {
      * Imprime uma mensagem de despedida e atualiza valor de close.
      * 
      * @return "Programa Encerrado!" | Retorna 1 (true)
-     * 
      */
     public static int case7() {
         Print.split();

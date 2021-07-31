@@ -7,10 +7,9 @@ import model.Product;
 public class Print {
 
     /**
-     * Imprime espaços ate que a palavra esteja ao centro
+     * Imprime espaços ate que a palavra esteja ao centro.
      * 
-     * @param tamTexto
-     * @param tamDivisor
+     * @param tamTexto,tamDivisor
      */
     private static void printEspacoMeio(int tamTexto, int tamDivisor) {
 
@@ -24,16 +23,16 @@ public class Print {
     }
 
     /**
-     * Cria uma linha e "-" no terminal
+     * Cria uma linha e "-" no terminal.
      */
     public static void split() {
         System.out.printf("\n------------------------------------------------------------\n");
     }
 
     /**
-     * Imprime uma string ao centro da linha
+     * Imprime uma string ao centro da linha.
      * 
-     * @param string
+     * @param titulo
      */
     public static void titulo(String titulo) {
         Print.split();
@@ -43,9 +42,9 @@ public class Print {
     }
 
     /**
-     * Imprime uma string ao centro da linha
+     * Imprime uma string ao centro da linha.
      * 
-     * @param string
+     * @param titulo,description
      */
     public static void tituloAndDescription(String titulo, String description) {
         Print.split();
@@ -57,6 +56,11 @@ public class Print {
         Print.split();
     }
 
+    /**
+     * Imprime todos os clientes cadastrados e seus informações.
+     * 
+     * @see appmain.Register Register.sales()
+     */
     public static void costumers() {
         int contador = 1;
         Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
@@ -69,8 +73,10 @@ public class Print {
     }
 
     /**
-     * Case 6 : O programa deverá mostrar a lista de todos os produtos cadastrados
-     * com a quantidade em estoque de cada um deles.
+     * Imprime todos os produtos cadastrados e seu respectivo valor e quantidade em
+     * estoque.
+     * 
+     * @see model.Product
      */
     public static void productsInStock() {
         int contador = 1;

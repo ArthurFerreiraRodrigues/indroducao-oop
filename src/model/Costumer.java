@@ -9,11 +9,11 @@ public class Costumer {
     private String celNumber;
 
     /**
-     * Gera o perfil do cliente
+     * Gera o profile do cliente
      * 
      * @param name      : nome do cliente
      * @param adress    : endereco do cliente
-     * @param celNumber : numero de celular do cliente
+     * @param celNumber : numero de telefone do cliente
      */
     public Costumer(String name, String adress, String celNumber) {
         this.name = name;
@@ -22,20 +22,35 @@ public class Costumer {
     }
 
     // Getters
+
+    /**
+     * @return Nome do Cliente
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return Endereço do Cliente
+     */
     public String getAdress() {
         return adress;
     }
 
+    /**
+     * @return Telefone do Cliente
+     */
     public String getCelNumber() {
         return celNumber;
     }
 
     // Setters
 
+    /**
+     * Atualiza Cadastro do Cliente.
+     * 
+     * @see appmain.Search
+     */
     public void updateCostumerInfo() {
         Print.titulo("Alterar Dados do Cliente");
         System.out.printf("Novo Nome :");
