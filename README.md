@@ -1,14 +1,15 @@
-## Getting Started
+## Trabalho Prático 1
+## Autor
+200056981 - Arthur Ferreira Rodrigues
+https://github.com/ArthurFerreiraRodrigues
+### Objetivo
+Escrever um programa em Java automatize o controle de clientes e produtos
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Organização das Pastas
+- `src`: Contém todos os packages necessários para que o programa funcione.
+- `lib`: Saída Padrão
+- Dentro da source, encontram-se três packages: O package `appmain` contém todos arquivos de lógica bruta necessária para que o programa funcione. O package `helper` possui métodos auxiliáres. O package `model` contém os modelos de dados e a própria base de dados.
 
-## Folder Structure
+### Data de Conclusão
+Terceiro Semestre - 30/07/2021
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
