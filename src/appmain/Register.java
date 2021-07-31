@@ -85,10 +85,10 @@ public class Register {
         System.out.print("\tDescrição : ");
         String description = Read.Line();
 
-        System.out.print("\tValor R$");
+        System.out.print("\tValor R$ ");
         double value = Read.Double();
 
-        System.out.print("\tLucro (%) : ");
+        System.out.print("\tLucro (0-100 %) : ");
         double profitPercentage = Read.Double();
 
         System.out.print("\tQuantidade em Estoque : ");
@@ -120,11 +120,12 @@ public class Register {
 
             Print.costumers();
             do {
+                Print.split();
                 System.out.printf("Selecione um Cliente Pela Sua Posição : ");
                 selectCostumer = Read.Int();
 
                 if (selectCostumer < Dados.getSizeOfCostumers() || selectCostumer > Dados.getSizeOfCostumers()) {
-                    System.out.print("ERRO: Número fora do intervalo! Digite novamente.\n\n");
+                    System.out.print("\nERRO: Número fora do intervalo! Digite novamente.\n\n");
                 }
             } while (selectCostumer < Dados.getSizeOfCostumers() || selectCostumer > Dados.getSizeOfCostumers());
 
@@ -136,13 +137,13 @@ public class Register {
 
                     Print.productsInStock();
                     do {
-
+                        Print.split();
                         System.out.printf("Selecione o Produto Vendido Pela Sua Posição : ");
                         selectProduct = Read.Int();
 
                         if (selectProduct != 0 && (selectProduct < Dados.getSizeOfProducts()
                                 || selectProduct > Dados.getSizeOfProducts())) {
-                            System.out.print("ERRO: Número fora do intervalo! Digite novamente.\n\n");
+                            System.out.print("\nERRO: Número fora do intervalo! Digite novamente.\n\n");
                         }
 
                     } while (selectProduct != 0 && (selectProduct < Dados.getSizeOfProducts()
@@ -154,6 +155,9 @@ public class Register {
                                 Dados.getProducts().get(selectProduct - 1).getName());
 
                         do {
+                            System.out.printf("\t\tDigite 0 para sair.\n");
+                            System.out.printf(
+                                    "\t\tNão pode ser um valor menor que 0 e nem maior que a quantidade em estoque. \n");
                             System.out.printf("\t\tQuantidade de unidades vendidas : ");
                             quantUnitSold = Read.Int();
 
@@ -165,6 +169,9 @@ public class Register {
                             }
                         } while (quantUnitSold < 0
                                 || quantUnitSold > Dados.getProducts().get(selectProduct - 1).getInStockQuant());
+
+                        // Atualizando base de dados
+                        Dados.getProducts().get(selectProduct - 1).uptateStockQuant(quantUnitSold);
                     }
                 }
 

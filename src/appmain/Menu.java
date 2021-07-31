@@ -1,6 +1,9 @@
 package appmain;
 
 import helper.Print;
+import helper.Read;
+import model.Costumer;
+import model.Product;
 
 public class Menu {
     /**
@@ -26,6 +29,40 @@ public class Menu {
     }
 
     public static void case2() {
+        String searchName;
+        Costumer match;
+        int confirmEdit;
+
+        Print.tituloAndDescription("Busca por Cliente", "Nome | Endereço | Telefone");
+
+        System.out.printf("Buscar Nome : ");
+        searchName = Read.Line();
+        match = Search.costumer(searchName);
+
+        if (match == null) {
+            System.out.printf("\nCliente não encontrado!");
+        } else {
+            System.out.printf("Resultado :\n");
+            Search.costumerResult(match);
+
+            do {
+                System.out.printf("\nAlterar Dados Cadastrais do Cliente ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu");
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        match.updateCostumerInfo();
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
 
     }
 
@@ -37,6 +74,40 @@ public class Menu {
     }
 
     public static void case4() {
+        String searchName;
+        Product match;
+        int confirmEdit;
+
+        Print.tituloAndDescription("Busca por Produto", "Nome | Descrição | Valor | Porcentagem de Lucro | Unidades");
+
+        System.out.printf("Buscar Nome : ");
+        searchName = Read.Line();
+        match = Search.product(searchName);
+
+        if (match == null) {
+            System.out.printf("\nProduto não encontrado!");
+        } else {
+            System.out.printf("Resultado :\n");
+            Search.productResult(match);
+
+            do {
+                System.out.printf("\nAlterar Dados Cadastrais do Produto ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu");
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        match.updateProductInfo();
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
 
     }
 

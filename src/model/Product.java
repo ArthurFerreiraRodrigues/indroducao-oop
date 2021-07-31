@@ -1,5 +1,8 @@
 package model;
 
+import helper.Print;
+import helper.Read;
+
 public class Product {
     private String name;
     private String description;
@@ -45,4 +48,23 @@ public class Product {
         return inStockQuant;
     }
 
+    // Setters
+    public void uptateStockQuant(int quantSold) {
+        inStockQuant = inStockQuant - quantSold;
+
+    }
+
+    public void updateProductInfo() {
+        Print.titulo("Alterar Dados do Produto");
+        System.out.printf("Novo Nome :");
+        name = Read.Line();
+        System.out.printf("Nova Descrição :");
+        description = Read.Line();
+        System.out.printf("Novo Valor : R$ ");
+        value = Read.Double();
+        System.out.printf("Nova Procentagem de Lucro (0-100 %) : ");
+        value = Read.Double();
+        System.out.printf("Nova Quantidade em Estoque : ");
+        inStockQuant = Read.Int();
+    }
 }

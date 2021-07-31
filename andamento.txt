@@ -16,7 +16,7 @@ case 3 ✔️
 case 4
 	copy case 2 -> control+f -> replace all client with product
 
-case 5
+case 5✔️✔️✔️✔️✔️ acabeisaporraa
 	@see helper.Print.productsInStock to print clients -> choose client -> print products -> choose products
 
 	inStockQuantities validation

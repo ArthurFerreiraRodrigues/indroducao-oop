@@ -1,5 +1,8 @@
 package model;
 
+import helper.Print;
+import helper.Read;
+
 public class Costumer {
 
     private String name, adress;
@@ -29,6 +32,18 @@ public class Costumer {
 
     public String getCelNumber() {
         return celNumber;
+    }
+
+    // Setters
+
+    public void updateCostumerInfo() {
+        Print.titulo("Alterar Dados do Cliente");
+        System.out.printf("Novo Nome :");
+        name = Read.Line();
+        System.out.printf("Novo Endereço :");
+        adress = Read.Line();
+        System.out.printf("Novo Telefone :");
+        celNumber = Read.Line();
     }
 
 }
