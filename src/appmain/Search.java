@@ -1,6 +1,6 @@
 package appmain;
 
-import model.Costumer;
+import model.Customer;
 import model.Product;
 import model.Dados;
 
@@ -17,10 +17,10 @@ public class Search {
      * 
      * @see appmain.Menu Menu.case2()
      */
-    public static Costumer costumer(String searchName) {
-        for (Costumer costumer : Dados.getCostumer()) {
-            if (costumer.getName().equals(searchName)) {
-                return costumer;
+    public static Customer customer(String searchName) {
+        for (Customer customer : Dados.getCustomer()) {
+            if (customer.getName().equals(searchName)) {
+                return customer;
             }
         }
         return null;
@@ -30,10 +30,10 @@ public class Search {
     /**
      * Immprime as informações do profile compatível com o nome pesquisado.
      * 
-     * @param costumer
+     * @param customer
      */
-    public static void costumerResult(Costumer costumer) {
-        System.out.printf("1. - %s | %s | %s\n", costumer.getName(), costumer.getAdress(), costumer.getCelNumber());
+    public static void customerResult(Customer customer) {
+        System.out.printf("1. - %s | %s | %s\n", customer.getName(), customer.getAdress(), customer.getCelNumber());
     }
 
     // Produto

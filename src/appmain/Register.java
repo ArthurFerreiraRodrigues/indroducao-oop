@@ -3,27 +3,27 @@ package appmain;
 import helper.Print;
 import helper.Read;
 
-import model.Costumer;
+import model.Customer;
 import model.Dados;
 import model.Product;
 
 public class Register {
 
-    // Costumers
+    // Customers
 
     /**
      * Recebe numero de clientes que serao cadastrados e gera novos perfis.
      * 
-     * @see model.Costumer
+     * @see model.Customer
      */
-    public static void costumer() {
+    public static void customer() {
         Print.titulo("Cadastro de Novo Cliente");
 
         System.out.print("Quantidade de clientes a serem cadastrados : ");
-        int quantCostumers = Read.Int();
-        for (int i = 0; i < quantCostumers; i++) {
-            Costumer profile = inputProfileCostumer();
-            addProfileToDataCostumer(profile);
+        int quantCustomers = Read.Int();
+        for (int i = 0; i < quantCustomers; i++) {
+            Customer profile = inputProfileCustomer();
+            addProfileToDataCustomer(profile);
         }
 
     }
@@ -32,10 +32,10 @@ public class Register {
      * Recebe as informações do cliente.
      * 
      * @return Novo profile de cliente (name, adress, celNumber)
-     * @see model.Costumer
+     * @see model.Customer
      */
-    private static Costumer inputProfileCostumer() {
-        System.out.printf("\nCliente %d\n", Dados.getSizeOfCostumers() + 1);
+    private static Customer inputProfileCustomer() {
+        System.out.printf("\nCliente %d\n", Dados.getSizeOfCustomers() + 1);
 
         System.out.print("\tNome : ");
         String name = Read.Line();
@@ -44,7 +44,7 @@ public class Register {
         System.out.print("\tNúmero de Celular : ");
         String celNumber = Read.Line();
 
-        return new Costumer(name, adress, celNumber);
+        return new Customer(name, adress, celNumber);
     }
 
     /**
@@ -53,8 +53,8 @@ public class Register {
      * @param profile
      * @see model.Dados
      */
-    private static void addProfileToDataCostumer(Costumer profile) {
-        Dados.getCostumer().add(profile);
+    private static void addProfileToDataCustomer(Customer profile) {
+        Dados.getCustomer().add(profile);
     }
 
     // Products
@@ -124,24 +124,24 @@ public class Register {
     public static void sales() {
         Print.titulo("Cadastro de Venda");
 
-        int selectCostumer, selectProduct, quantUnitSold;
+        int selectCustomer, selectProduct, quantUnitSold;
 
-        if (Dados.getSizeOfCostumers() < 0) {
+        if (Dados.getSizeOfCustomers() < 0) {
 
             System.out.printf("Nenhum Cliente Cadastrado.");
 
         } else {
 
-            Print.costumers();
+            Print.customers();
             do {
                 Print.split();
                 System.out.printf("Selecione um Cliente Pela Sua Posição : ");
-                selectCostumer = Read.Int();
+                selectCustomer = Read.Int();
 
-                if (selectCostumer < 1 || selectCostumer > Dados.getSizeOfCostumers()) {
+                if (selectCustomer < 1 || selectCustomer > Dados.getSizeOfCustomers()) {
                     System.out.print("\nERRO: Número fora do intervalo! Digite novamente.\n\n");
                 }
-            } while (selectCostumer < 1 || selectCostumer > Dados.getSizeOfCostumers());
+            } while (selectCustomer < 1 || selectCustomer > Dados.getSizeOfCustomers());
 
             do {
                 if (Dados.getSizeOfProducts() < 0) {
@@ -162,7 +162,7 @@ public class Register {
                     } while (selectProduct != 0 && (selectProduct < 1 || selectProduct > Dados.getSizeOfProducts()));
                     if (selectProduct != 0) {
                         System.out.printf("\nCliente Selecionado : %s\n",
-                                Dados.getCostumer().get(selectCostumer - 1).getName());
+                                Dados.getCustomer().get(selectCustomer - 1).getName());
                         System.out.printf("\tProduto Selecionado : %s\n",
                                 Dados.getProducts().get(selectProduct - 1).getName());
                         System.out.printf("\t\tDigite 0 para sair.\n");

@@ -2,7 +2,7 @@ package appmain;
 
 import helper.Print;
 import helper.Read;
-import model.Costumer;
+import model.Customer;
 import model.Dados;
 import model.Product;
 
@@ -31,7 +31,7 @@ public class Menu {
      * @see appmain.Register
      */
     public static void case1() {
-        Register.costumer();
+        Register.customer();
     }
 
     /**
@@ -42,20 +42,20 @@ public class Menu {
      */
     public static void case2() {
         String searchName;
-        Costumer match;
+        Customer match;
         int confirmEdit;
 
         Print.tituloAndDescription("Busca por Cliente", "Nome | Endereço | Telefone");
 
         System.out.printf("Buscar Nome : ");
         searchName = Read.Line();
-        match = Search.costumer(searchName);
+        match = Search.customer(searchName);
 
         if (match == null) {
             System.out.printf("\nCliente não encontrado!");
         } else {
             System.out.printf("Resultado :\n");
-            Search.costumerResult(match);
+            Search.customerResult(match);
 
             do {
                 System.out.printf("\nAlterar Dados Cadastrais do Cliente ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu");
@@ -63,7 +63,7 @@ public class Menu {
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
                     case 1:
-                        match.updateCostumerInfo();
+                        match.updateCustomerInfo();
                         break;
                     case 2:
                         System.out.println("Voltando ao menu.");

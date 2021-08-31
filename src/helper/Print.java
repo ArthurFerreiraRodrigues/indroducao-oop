@@ -1,6 +1,6 @@
 package helper;
 
-import model.Costumer;
+import model.Customer;
 import model.Dados;
 import model.Product;
 
@@ -61,12 +61,12 @@ public class Print {
      * 
      * @see appmain.Register Register.sales()
      */
-    public static void costumers() {
+    public static void customers() {
         int contador = 1;
         Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
-        for (Costumer costumer : Dados.getCostumer()) {
-            System.out.printf(".%d - %s | %s | %s\n", contador, costumer.getName(), costumer.getAdress(),
-                    costumer.getCelNumber());
+        for (Customer customer : Dados.getCustomer()) {
+            System.out.printf(".%d - %s | %s | %s\n", contador, customer.getName(), customer.getAdress(),
+                    customer.getCelNumber());
 
             contador++;
         }

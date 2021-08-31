@@ -3,7 +3,7 @@ package model;
 import helper.Print;
 import helper.Read;
 
-public class Costumer {
+public class Customer {
 
     private String name, adress;
     private String celNumber;
@@ -15,7 +15,7 @@ public class Costumer {
      * @param adress    : endereco do cliente
      * @param celNumber : numero de telefone do cliente
      */
-    public Costumer(String name, String adress, String celNumber) {
+    public Customer(String name, String adress, String celNumber) {
         this.name = name;
         this.adress = adress;
         this.celNumber = celNumber;
@@ -51,7 +51,7 @@ public class Costumer {
      * 
      * @see appmain.Search
      */
-    public void updateCostumerInfo() {
+    public void updateCustomerInfo() {
         Print.titulo("Alterar Dados do Cliente");
         System.out.printf("Novo Nome :");
         name = Read.Line();

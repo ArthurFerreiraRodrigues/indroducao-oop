@@ -14,7 +14,7 @@ public class App {
         int close = 0;
 
         // Pre Filling
-        Fill.costumer();
+        Fill.customer();
         Fill.productList();
 
         // Menu

@@ -7,14 +7,14 @@ import java.util.List;
  * Classe para armazenar dados
  */
 public abstract class Dados {
-    private static final ArrayList<Costumer> costumers = new ArrayList<>();
+    private static final ArrayList<Customer> customers = new ArrayList<>();
     private static final ArrayList<Product> products = new ArrayList<>();
 
     /**
      * @return Lista de Clientes
      */
-    public static List<Costumer> getCostumer() {
-        return costumers;
+    public static List<Customer> getCustomer() {
+        return customers;
     }
 
     /**
@@ -27,8 +27,8 @@ public abstract class Dados {
     /**
      * @return Tamanho da Lista Clientes
      */
-    public static int getSizeOfCostumers() {
-        return costumers.size();
+    public static int getSizeOfCustomers() {
+        return customers.size();
     }
 
     /**

@@ -1,20 +1,20 @@
 package helper;
 
-import model.Costumer;
+import model.Customer;
 import model.Dados;
 import model.Product;
 
 public class Fill {
-    // Costumer
+    // Customer
 
     /**
      * Enche a Lista de Clientes
      */
-    public static void costumer() {
-        int quantCostumers = 10;
-        for (int i = 0; i < quantCostumers; i++) {
-            Costumer profile = fillProfileCostumer(i);
-            addProfileToDataCostumer(profile);
+    public static void customer() {
+        int quantCustomers = 10;
+        for (int i = 0; i < quantCustomers; i++) {
+            Customer profile = fillProfileCustomer(i);
+            addProfileToDataCustomer(profile);
         }
     }
 
@@ -22,15 +22,15 @@ public class Fill {
      * Recebe as informações do cliente.
      * 
      * @return Novo profile de cliente (name, adress, celNumber)
-     * @see model.Costumer
+     * @see model.Customer
      */
-    private static Costumer fillProfileCostumer(int i) {
+    private static Customer fillProfileCustomer(int i) {
         i = i + 1;
         String name = "Cliente" + i;
         String adress = "Endereço" + i;
         String celNumber = "" + (i * 25042002 / 2);
 
-        return new Costumer(name, adress, celNumber);
+        return new Customer(name, adress, celNumber);
     }
 
     /**
@@ -39,8 +39,8 @@ public class Fill {
      * @param profile
      * @see model.Dados
      */
-    private static void addProfileToDataCostumer(Costumer profile) {
-        Dados.getCostumer().add(profile);
+    private static void addProfileToDataCustomer(Customer profile) {
+        Dados.getCustomer().add(profile);
     }
 
     // Product
